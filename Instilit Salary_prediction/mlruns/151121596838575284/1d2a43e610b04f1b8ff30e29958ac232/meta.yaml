@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/151121596838575284/1d2a43e610b04f1b8ff30e29958ac232/artifacts
+end_time: 1752595359017
+entry_point_name: ''
+experiment_id: '151121596838575284'
+lifecycle_stage: active
+run_id: 1d2a43e610b04f1b8ff30e29958ac232
+run_name: Final_RandomForest
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1752595358109
+status: 3
+tags: []
+user_id: Minfy

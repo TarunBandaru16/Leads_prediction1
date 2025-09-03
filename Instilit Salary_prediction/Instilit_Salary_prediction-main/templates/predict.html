@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Salary Prediction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #3b82f6 0%, #1e293b 100%);
+            font-family: 'Montserrat', Arial, sans-serif;
+            margin: 0; padding: 0; min-height: 100vh;
+        }
+        .container {
+            max-width: 450px;
+            margin: 60px auto 0 auto;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 40px rgba(30,41,59,0.18);
+            padding: 38px 30px 30px 30px;
+            animation: fadeIn 1.2s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        h1 {
+            color: #1e293b;
+            text-align: center;
+            margin-bottom: 8px;
+            font-size: 2em;
+            letter-spacing: 1px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #3b82f6;
+            font-size: 1.1em;
+            margin-bottom: 22px;
+            font-weight: 600;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
+        }
+        input, select {
+            padding: 11px 12px;
+            border-radius: 7px;
+            border: 1.5px solid #d1d5db;
+            font-size: 1em;
+            background: #f9fafb;
+            transition: border 0.2s;
+        }
+        input:focus, select:focus {
+            border: 1.5px solid #3b82f6;
+            outline: none;
+            background: #fff;
+        }
+        .predict-btn {
+            background: linear-gradient(90deg, #3b82f6 60%, #2563eb 100%);
+            color: #fff;
+            padding: 13px 0;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 16px rgba(59,130,246,0.10);
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .predict-btn:hover {
+            background: linear-gradient(90deg, #2563eb 60%, #3b82f6 100%);
+            transform: translateY(-2px) scale(1.03);
+        }
+        .result {
+            margin-top: 22px;
+            padding: 15px;
+            background: #e0f2fe;
+            border-radius: 7px;
+            color: #0369a1;
+            text-align: center;
+            font-size: 1.13em;
+            font-weight: 600;
+            animation: fadeIn 0.7s;
+        }
+        @media (max-width: 600px) {
+            .container { margin: 24px 6px; padding: 16px 5px 10px 5px; }
+            h1 { font-size: 1.3em; }
+            .predict-btn { font-size: 1em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Salary Prediction</h1>
+        <div class="subtitle">Enter all 9 details for an accurate prediction</div>
+        <form method="POST" autocomplete="on">
+            <input type="text" name="job_title" placeholder="Job Title (e.g. Data Scientist)" required>
+
+            <select name="experience_level" required>
+                <option value="" disabled selected>Experience Level</option>
+                <option value="junior">Junior</option>
+                <option value="mid">Mid</option>
+                <option value="senior">Senior</option>
+                <option value="lead">Lead</option>
+            </select>
+
+            <select name="employment_type" required>
+                <option value="" disabled selected>Employment Type</option>
+                <option value="contract">Contract</option>
+                <option value="part-time">Part-time</option>
+                <option value="full-time">Full-time</option>
+                <option value="intern">Intern</option>
+            </select>
+
+            <select name="company_size" required>
+                <option value="" disabled selected>Company Size</option>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select>
+
+            <input type="text" name="company_location" placeholder="Company Location (e.g. USA)" required>
+            <input type="number" name="remote_ratio" placeholder="Remote Ratio (0-100)" min="0" max="100" required>
+            <input type="number" name="years_experience" placeholder="Years of Experience" min="0" required>
+            <input type="text" name="salary_currency" placeholder="Salary Currency (e.g. USD)" required>
+            <input type="number" step="any" name="conversion_rate" placeholder="Conversion Rate (e.g. 1.0)" required>
+
+            <button type="submit" class="predict-btn">🔮 Predict Salary</button>
+        </form>
+        {% if prediction_text %}
+            <div class="result">{{ prediction_text }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>

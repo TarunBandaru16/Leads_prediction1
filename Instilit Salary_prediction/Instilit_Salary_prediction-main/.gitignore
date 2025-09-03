@@ -1,0 +1,62 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.so
+
+# Logs & debug
+*.log
+*.out
+*.tmp
+*.pid
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+env.bak/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Uploaded files / temp
+uploaded/
+*.csv
+
+# Machine learning artifacts
+*.pkl
+*.joblib
+*.sav
+*.h5
+
+# Model output directories
+saved_models/
+
+
+# Flask cache
+instance/
+*.db
+
+# Airflow
+airflow/airflow.db
+airflow/airflow-webserver.pid
+airflow/logs/
+
+# Python env files
+*.env
+.env
+
+# Pytest
+.cache/
+.pytest_cache/
+
+# Ignore local configs
+*.local

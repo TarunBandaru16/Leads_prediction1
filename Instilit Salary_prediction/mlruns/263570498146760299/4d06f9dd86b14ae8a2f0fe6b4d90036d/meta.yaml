@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/263570498146760299/4d06f9dd86b14ae8a2f0fe6b4d90036d/artifacts
+end_time: 1752595489165
+entry_point_name: ''
+experiment_id: '263570498146760299'
+lifecycle_stage: active
+run_id: 4d06f9dd86b14ae8a2f0fe6b4d90036d
+run_name: multi_split_drift
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1752595400682
+status: 3
+tags: []
+user_id: Minfy
