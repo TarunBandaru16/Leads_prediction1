@@ -22,8 +22,9 @@ pipeline = joblib.load("saved_models/final_XGBoost_pipelinenew.pkl")
 
 # Set up PostgreSQL database connection
 # Connects to 'mydb5' database for storing predictions
-DB_URI = 'postgresql+psycopg2://postgres:Madhu14777@localhost:5432/mydb5'
-engine = create_engine(DB_URI)  # Create SQLAlchemy engine for database operations
+db_pass = os.getenv("DB_PASS")
+engine = create_engine(f"postgresql+psycopg2://postgres:{db_pass}@localhost:5432/mydb5")
+ # Create SQLAlchemy engine for database operations
 
 # Ensure the upload folder exists
 # Creates 'uploaded' directory if it doesn't exist for storing user-uploaded CSV files
